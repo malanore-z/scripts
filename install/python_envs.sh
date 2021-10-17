@@ -2,7 +2,10 @@
 
 # update resources
 mkdir ~/.pip -p
-echo "[global]" >> ~/.pip/pip.conf
-echo "index-url = https://pypi.tuna.tsinghua.edu.cn/simple" >> ~/.pip/pip.conf
+
+if [ ! -f ~/.pip/pip.conf ]; then
+    echo "[global]" >> ~/.pip/pip.conf
+    echo "index-url = https://pypi.tuna.tsinghua.edu.cn/simple" >> ~/.pip/pip.conf
+fi
 
 pip install virtualenv
